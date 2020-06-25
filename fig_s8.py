@@ -7,7 +7,7 @@ df_evolution = pd.read_csv(dat_dir+"sfd_evolution.csv")
 # Plot settings
 lw      = 2.5
 fscale  = 2.0
-fsize   = 20
+fsize   = 23
 
 sns.set_style("whitegrid")
 sns.set(style="ticks", font_scale=fscale)
