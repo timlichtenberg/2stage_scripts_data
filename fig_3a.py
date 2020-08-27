@@ -291,20 +291,20 @@ cbar.outline.set_linewidth(1)
 
 ## Differenly colored data points for reservoirs
 
-# Scatter plot for individual simulations
-ax1.scatter(rad, tform, marker='o', facecolors='white', edgecolors='black', s=10, zorder=1, lw=1.0, alpha=0.5)
+# # Scatter dots for *all* individual simulations 
+# ax1.scatter(rad, tform, marker='o', facecolors='white', edgecolors='black', s=10, zorder=1, lw=1.0, alpha=0.5)
 
-# Red for Reservoir I
-tform_resI  = np.ma.masked_where((tform > 0.3), tform)
-rad_resI    = np.ma.masked_where((tform > 0.3), rad)
-tform_resI  = np.ma.masked_where((tform < 0.1), tform_resI)
-rad_resI    = np.ma.masked_where((tform < 0.1), rad_resI)
-ax1.scatter(rad_resI, tform_resI, marker='o', facecolors=reds[3], s=25, zorder=1, lw=1.0, alpha=0.99)
+# Red dots for Reservoir I
+tform_resI  = np.ma.masked_where((tform > 0.4), tform)
+rad_resI    = np.ma.masked_where((tform > 0.4), rad)
+tform_resI  = np.ma.masked_where((tform < 0.11), tform_resI)
+rad_resI    = np.ma.masked_where((tform < 0.11), rad_resI)
+ax1.scatter(rad_resI, tform_resI, marker='o', facecolors=reds[3], edgecolors='black', s=25, zorder=1, lw=0.5, alpha=0.8)
 
-# Blue for Reservoir II
+# Blue dots for Reservoir II
 tform_resII = np.ma.masked_where((tform <= 0.7), tform)
 rad_resII   = np.ma.masked_where((tform <= 0.7), rad)
-ax1.scatter(rad_resII, tform_resII, marker='o', facecolors=blues[3], s=25, zorder=1, lw=1.0, alpha=0.99)
+ax1.scatter(rad_resII, tform_resII, marker='o', facecolors=blues[3], edgecolors='black', s=25, zorder=1, lw=0.5, alpha=0.8)
 
 
 ax1.text(-0.12, +1.21, 'A', color="k", rotation=0, ha="left", va="top", fontsize=fsize+10, transform=ax1.transAxes, bbox=dict(fc='white', ec="white", alpha=0.01, pad=0.1, boxstyle='round'))
@@ -323,24 +323,27 @@ CS = ax1.contour(grid_x, grid_y, zi_perco_frac, levels=[0.5], colors=qyellow, li
 CS = ax1.contour(grid_x, grid_y, zi_melt2_frac, levels=[0.9], colors=qyellow, linewidths=2.5)
 
 ## Annotation text
-H1 = ax1.text(3.6, 0.11, 'H1', color=qgreen, rotation=0, fontsize=fsize+2, ha="left")
-H2 = ax1.text(34, 0.11, 'H2', color=qgreen, rotation=0, fontsize=fsize+2, ha="left")
-C1 = ax1.text(14.5, 0.11, 'C1', color=qyellow, rotation=0, fontsize=fsize+2, ha="left")
-C2 = ax1.text(105, 0.11, 'C2', color=qyellow, rotation=0, fontsize=fsize+2, ha="left")
+H1 = ax1.text(3.6, 0.11, 'H1', color=qgreen, rotation=0, fontsize=fsize+4, ha="left")
+H2 = ax1.text(34, 0.11, 'H2', color=qgreen, rotation=0, fontsize=fsize+4, ha="left")
+C1 = ax1.text(14.5, 0.11, 'C1', color=qyellow, rotation=0, fontsize=fsize+4, ha="left")
+C2 = ax1.text(105, 0.11, 'C2', color=qyellow, rotation=0, fontsize=fsize+4, ha="left")
 
-H1_txt = ax1.text(4.2, 0.58, ' > 50 vol%\n'+r'$T_\mathrm{max} \geq T_\mathrm{hydr}$', color=qgreen, rotation=0, fontsize=fsize-3, ha="left", va="top")
-C1_txt = ax1.text(18, 0.45, ' > 50 vol%\n'+r'$T_\mathrm{max} \geq T_\mathrm{perc}$', color=qyellow, rotation=0, fontsize=fsize-3, ha="left", va="top")
-H2_txt = ax1.text(38, 0.28, ' > 90 vol%\n'+r'$T_\mathrm{max} \geq T_\mathrm{decomp}$', color=qgreen, rotation=0, fontsize=fsize-3, ha="left", va="top")
-C2_txt = ax1.text(110, 0.19, ' > 90 vol%\n'+r'$\phi_\mathrm{max} \geq \phi_\mathrm{rain}$', color=qyellow, rotation=0, fontsize=fsize-3, ha="left", va="top")
+## Longish annotations
+# H1_txt = ax1.text(4.2, 0.58, ' > 50 vol%\n'+r'$T_\mathrm{max} \geq T_\mathrm{hydr}$', color=qgreen, rotation=0, fontsize=fsize-3, ha="left", va="top")
+# C1_txt = ax1.text(18, 0.45, ' > 50 vol%\n'+r'$T_\mathrm{max} \geq T_\mathrm{perc}$', color=qyellow, rotation=0, fontsize=fsize-3, ha="left", va="top")
+# H2_txt = ax1.text(38, 0.28, ' > 90 vol%\n'+r'$T_\mathrm{max} \geq T_\mathrm{decomp}$', color=qgreen, rotation=0, fontsize=fsize-3, ha="left", va="top")
+# C2_txt = ax1.text(110, 0.19, ' > 90 vol%\n'+r'$\phi_\mathrm{max} \geq \phi_\mathrm{rain}$', color=qyellow, rotation=0, fontsize=fsize-3, ha="left", va="top")
 
-resI_txt = ax1.text(1.05, 1.3, 'Reservoir II\nplanetesimals', color=blues[3], rotation=0, fontsize=fsize+1, ha="left", va="center", bbox=dict(fc='white', ec="white", alpha=0.0, pad=0.1, boxstyle='round'))
-nf_txt = ax1.text(1.05, 0.45, 'not formed', color="grey", rotation=0, fontsize=fsize-5, ha="left", va="center", alpha=0.5)
-resII_txt = ax1.text(1.05, 0.2, 'Reservoir I\nplanetesimals', color=reds[3], rotation=0, fontsize=fsize+1, ha="left", va="center", bbox=dict(fc='white', ec="white", alpha=0.0, pad=0.1, boxstyle='round'))
-for text in [ resI_txt, resII_txt ]:
+resI_txt = ax1.text(1.05, 0.6, 'Reservoir II planetesimals', color=blues[3], rotation=0, fontsize=fsize+1, ha="left", va="center", bbox=dict(fc='white', ec="white", alpha=0.0, pad=0.1, boxstyle='round'))
+resII_txt = ax1.text(1.05, 0.24, 'Reservoir I planetesimals', color=reds[3], rotation=0, fontsize=fsize+1, ha="left", va="center", bbox=dict(fc='white', ec="white", alpha=0.0, pad=0.1, boxstyle='round'))
+for text in [ resI_txt, resII_txt, H1, H2, C1, C2 ]:
     text.set_path_effects([path_effects.Stroke(linewidth=0.8, foreground='black'),
                        path_effects.Normal()])
 
-# for text in [ H2, C1, C2, H1_txt, H2_txt, C1_txt, C2_txt ]:
+# # Annotation for planetesimals that are not formed in the disk simulation
+# nf_txt = ax1.text(1.05, 0.45, 'not formed', color="grey", rotation=0, fontsize=fsize-5, ha="left", va="center", alpha=0.5)
+
+# for text in [ H1, H2, C1, C2, H1_txt, H2_txt, C1_txt, C2_txt ]:
 #     text.set_path_effects([path_effects.Stroke(linewidth=0.8, foreground='white'),
 #                        path_effects.Normal()])
 # for text in [ resI_txt, resII_txt, nf_txt, H1, H1_txt ]:

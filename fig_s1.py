@@ -66,7 +66,7 @@ ax0.set_yscale("log")
 ax0.set_xlim([1e-2, 5])
 ax0.set_ylim([1e-8, 1])
 
-ax0.set_ylabel(r'Reservoir mass, $M$ ($M_{\odot}$)', fontsize=fsize)
+ax0.set_ylabel(r'Mass, $M$ ($M_{\odot}$)', fontsize=fsize)
 ax0.set_xlabel(r'Time, $t$ (Myr)', fontsize=fsize)
 
 time_legend = ax0.legend(loc=3, ncol=1, fontsize=fsize)
