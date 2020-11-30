@@ -171,14 +171,14 @@ ax1.plot(5.0, 1.0e+6, marker='.', markersize=15, color="k", markerfacecolor=colo
 
 lwa=1.5
 
-x_arrows = 0.015
+x_arrows = 0.017
 x_text   = x_arrows-0.01
-ax1.annotate("", xy=(x_arrows, 1.0), xycoords='axes fraction', xytext=(x_arrows, 0.828), textcoords='axes fraction', arrowprops=dict(arrowstyle="-|>,head_length=0.35,head_width=0.2", lw=lwa, connectionstyle="arc3", fc=qgray_light, ec=qgray_light), transform=ax1.transAxes)
-ax1.text(x_text, 0.745, 'Class II disk', color=qgray_light, size=fsize, rotation=90, va='center', ha='left', fontsize=fsize-5, transform=ax1.transAxes)
-ax1.annotate("", xy=(x_arrows, 0.66), xycoords='axes fraction', xytext=(x_arrows, 0.480), textcoords='axes fraction', arrowprops=dict(arrowstyle="|-|,widthA=0.12,widthB=0.0", lw=lwa, connectionstyle="arc3", fc=qgray_light, ec=qgray_light), transform=ax1.transAxes)
-ax1.annotate("", xy=(x_arrows, 0.47), xycoords='axes fraction', xytext=(x_arrows, 0.302), textcoords='axes fraction', arrowprops=dict(arrowstyle="-|>,head_length=0.35,head_width=0.2", lw=lwa, connectionstyle="arc3", fc=qgray_light, ec=qgray_light), transform=ax1.transAxes)
-ax1.text(x_text, 0.236, 'Class I disk', color=qgray_light, size=fsize, rotation=90, va='center', ha='left', fontsize=fsize-5, transform=ax1.transAxes)
-ax1.annotate("", xy=(x_arrows, 0.171), xycoords='axes fraction', xytext=(x_arrows, 0.001), textcoords='axes fraction', arrowprops=dict(arrowstyle="|-|,widthA=0.0,widthB=0.0", lw=lwa, connectionstyle="arc3", fc=qgray_light, ec=qgray_light), transform=ax1.transAxes)
+ax1.annotate("", xy=(x_arrows, 1.0), xycoords='axes fraction', xytext=(x_arrows, 0.795), textcoords='axes fraction', arrowprops=dict(arrowstyle="-|>,head_length=0.35,head_width=0.2", lw=lwa, connectionstyle="arc3", fc=qgray_light, ec=qgray_light), transform=ax1.transAxes)
+ax1.text(x_text, 0.745, 'Class II', color=qgray_light, size=fsize, rotation=90, va='center', ha='left', fontsize=fsize-5, transform=ax1.transAxes)
+ax1.annotate("", xy=(x_arrows, 0.695), xycoords='axes fraction', xytext=(x_arrows, 0.480), textcoords='axes fraction', arrowprops=dict(arrowstyle="|-|,widthA=0.12,widthB=0.0", lw=lwa, connectionstyle="arc3", fc=qgray_light, ec=qgray_light), transform=ax1.transAxes)
+ax1.annotate("", xy=(x_arrows, 0.47), xycoords='axes fraction', xytext=(x_arrows, 0.280), textcoords='axes fraction', arrowprops=dict(arrowstyle="-|>,head_length=0.35,head_width=0.2", lw=lwa, connectionstyle="arc3", fc=qgray_light, ec=qgray_light), transform=ax1.transAxes)
+ax1.text(x_text, 0.236, 'Class I', color=qgray_light, size=fsize, rotation=90, va='center', ha='left', fontsize=fsize-5, transform=ax1.transAxes)
+ax1.annotate("", xy=(x_arrows, 0.19), xycoords='axes fraction', xytext=(x_arrows, 0.001), textcoords='axes fraction', arrowprops=dict(arrowstyle="|-|,widthA=0.0,widthB=0.0", lw=lwa, connectionstyle="arc3", fc=qgray_light, ec=qgray_light), transform=ax1.transAxes)
 
 # ##### GAP OPENING CONTOURS
 # CS              = ax1.contourf(x, y, Z, color_levels, extend='max', alpha=0.0, corner_mask=True)
