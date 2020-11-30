@@ -16,7 +16,7 @@ q = readdata()
 # Plot settings
 lw      = 2
 fscale  = 2.0
-fsize   = 18
+fsize   = 20
 
 plt.rcParams.update({'font.size': 18})
 plt.rcParams['axes.linewidth'] = 1.5 
@@ -197,7 +197,7 @@ N = 1000 # number of vspan blocks
 ax2.text(0.25e+6, 4.8, r'$\approx$ disk lifetime', color=qgray_dark, rotation=0, ha="left", va="center", fontsize=fsize-4)
 ax2.axhspan(4, 6, color=qgray_light, alpha=.3, lw=0)
 
-ax1.text(0.73, 0.80, r'Reservoir separation', color="black", rotation=0, ha="center", va="top", fontsize=fsize-2, transform=ax1.transAxes)
+ax1.text(0.73, 0.80, r'Reservoir separation', color="k", rotation=0, ha="center", va="top", fontsize=fsize-2, transform=ax1.transAxes)
 start_point = 5.91
 end_point   = 6.78
 xspan       = np.logspace(start_point, end_point, N)
@@ -206,7 +206,7 @@ for i in range(0, N-1):
     alpha_max   = 0.99
     alpha_scale = float(i)/float(N)
     alpha       = alpha_min + (alpha_max-alpha_min)*alpha_scale
-    ax1.axvspan(xspan[i], xspan[i+1], color=qred_light, alpha=alpha, lw=-0.0)
+    ax1.axvspan(xspan[i], xspan[i+1], color=qgray_light, alpha=alpha, lw=-0.0)
 
 ax2.text(0.4e+6, 0.4, 'Collision-dominated growth', color=qred, rotation=0, ha="center", va="bottom", fontsize=fsize-4)
 ax2.text(1.21e+6, 0.4, 'Pebble-aided growth', color=qred_dark, rotation=0, ha="center", va="bottom", fontsize=fsize-4)
@@ -236,17 +236,17 @@ ax2.plot([0], [0], ls="--", c=qblue, lw=lw, label="15 au, planetesimals")
 
 ## ARROWS
 lwa=1.5
-ax1.annotate('', xy=(0.85, 0.08), xycoords='axes fraction', xytext=(0.85, 0.44), textcoords='axes fraction', arrowprops={'arrowstyle': '-|>,head_length=0.2,head_width=0.1', 'facecolor': 'k', 'edgecolor': 'k', 'lw': lwa}, va='center', transform=ax1.transAxes)
-ax1.text(0.80, 0.33, r'$\frac{\mathrm{d} M_{\mathrm{Res} \, \mathrm{II}}}{\mathrm{d}t}$', color="black", rotation=0, ha="center", va="top", fontsize=fsize+2, transform=ax1.transAxes)
+ax1.annotate('', xy=(0.85, 0.08), xycoords='axes fraction', xytext=(0.85, 0.44), textcoords='axes fraction', arrowprops={'arrowstyle': '<|-|>,head_length=0.2,head_width=0.1', 'facecolor': 'k', 'edgecolor': 'k', 'lw': lwa}, va='center', transform=ax1.transAxes)
+# ax1.text(0.80, 0.33, r'$\frac{\mathrm{d} M_{\mathrm{Res} \, \mathrm{II}}}{\mathrm{d}t}$', color="black", rotation=0, ha="center", va="top", fontsize=fsize+2, transform=ax1.transAxes)
 
 ax1.text(0.015, 0.97, 'Disk build-up', color=qgray_dark, size=fsize, rotation=0, va='center', ha='left', fontsize=fsize-5, transform=ax1.transAxes)
-ax1.annotate("", xy=(0.34, 0.97), xycoords='axes fraction', xytext=(0.15, 0.97), textcoords='axes fraction', arrowprops=dict(arrowstyle="-|>,head_length=0.2,head_width=0.1", lw=lwa, connectionstyle="arc3", fc=qgray, ec=qgray), transform=ax1.transAxes)
+ax1.annotate("", xy=(0.34, 0.97), xycoords='axes fraction', xytext=(0.17, 0.97), textcoords='axes fraction', arrowprops=dict(arrowstyle="-|>,head_length=0.2,head_width=0.1", lw=lwa, connectionstyle="arc3", fc=qgray, ec=qgray), transform=ax1.transAxes)
 
 
 ###### PLOT SETTINGS
 
 legend1 = ax1.legend(fontsize=fsize-5, loc="lower left", ncol=2, title="Flux contribution")
-legend2 = ax2.legend(fontsize=fsize-5, loc="upper left", ncol=2, title="Mode of accretion")
+legend2 = ax2.legend(fontsize=fsize-5, loc="upper left", ncol=2, title="Orbit & growth mode")
 plt.setp(legend1.get_title(), fontsize=fsize-4)
 plt.setp(legend2.get_title(), fontsize=fsize-4)
 
@@ -257,7 +257,7 @@ xticklabels = ["0.3", "0.5", "0.7", "1", "2", "3", "4", "5"]
 
 ax1.set_xscale('log')
 ax1.set_yscale('log')
-ax1.set_ylabel(r'Pebble flux ($M_{\mathrm{Earth}}$/Myr)', fontsize=fsize)
+ax1.set_ylabel(r'Pebble flux ($M_{\mathrm{Earth}}$ Myr$^{-1}$)', fontsize=fsize)
 ax1.set_xlim([x_left, x_right])
 ax1.set_ylim(bottom=1e+0, top=3e3)
 ax1.set_xticks(xticks)
@@ -271,7 +271,7 @@ ax2.set_xticks(xticks)
 ax2.set_xticklabels(xticklabels)
 ax2.set_ylim(bottom=3e-1, top=9e+2)
 ax2.tick_params(axis="both", labelsize=fsize)
-ax2.set_xlabel(r'Time after CAIs, $\Delta t_{\mathrm{CAI}}\ (\rm{Myr})$', fontsize=fsize)
+ax2.set_xlabel(r'Time after CAI formation, $\Delta t_{\mathrm{CAI}}\ (\rm{Myr})$', fontsize=fsize)
 
 plt.setp(ax1.get_xticklabels(), visible=False)
 plt.tight_layout(pad=2.5, w_pad=0.5, h_pad=0.5)
