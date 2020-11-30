@@ -19,7 +19,7 @@ gs = fig.add_gridspec(nrows=15, ncols=13, wspace=0.15, hspace=0.15, left=0.055, 
 sns.set(style="ticks")
 ax1 = fig.add_subplot(gs[0:15, 0:15])
 
-ax1.set_xlim([0.5,21.])
+ax1.set_xlim([0.5,20.])
 ax1.set_ylim([1e+5,5e+6])
 ax1.set_xscale('log')
 ax1.set_yscale('log')
@@ -107,7 +107,7 @@ color_ticks     = [ 13, 50, 100, 150, 200, 250, 318 ]
 contour_levels  = [ 100, 150, 300 ][::-1]
 
 
-lw_mig = 1.5
+lw_mig = 1.0
 
 
 # ########## 'Lost' track Res II
@@ -131,7 +131,7 @@ for idx, track_names in enumerate([ ('350000.0yr0.1Mearth3.0au', '350000.0yr0.01
     if idx == 0 or idx == 1:
         mig_col         = qgray_dark
         mig_col_dot     = qgray_dark
-        mig_col_cone    = qgray_dark
+        mig_col_cone    = qgray_light
     if idx == 2:
         mig_col         = qgreen
         mig_col_dot     = qgreen_dark
@@ -160,9 +160,9 @@ for idx, track_names in enumerate([ ('350000.0yr0.1Mearth3.0au', '350000.0yr0.01
 
 color_mig = qgray_dark
 ax1.text(0.46, 0.58, 'Terrestrial planet\nmigration corridor', color=color_mig, rotation=0, ha="center", va="center", fontsize=fsize-3, transform=ax1.transAxes)
-ax1.text(0.40, 0.935, r'$0.1 \, M_{\mathrm{Earth}}$', color=color_mig, size=fsize-7, rotation=-40, va='center', ha='center', transform=ax1.transAxes)
-ax1.text(0.40, 0.777, r'$0.2 \, M_{\mathrm{Earth}}$', color=color_mig, size=fsize-7, rotation=-33, va='center', ha='center', transform=ax1.transAxes)
-ax1.text(0.41, 0.423, r'$0.01 \, M_{\mathrm{Earth}}$', color=color_mig, size=fsize-7, rotation=-46, va='center', ha='center', transform=ax1.transAxes)
+ax1.text(0.40, 0.938, r'$0.1 \, M_{\mathrm{Earth}}$', color=color_mig, size=fsize-7, rotation=-40, va='center', ha='center', transform=ax1.transAxes)
+ax1.text(0.40, 0.787, r'$0.2 \, M_{\mathrm{Earth}}$', color=color_mig, size=fsize-7, rotation=-33, va='center', ha='center', transform=ax1.transAxes)
+ax1.text(0.41, 0.430, r'$0.01 \, M_{\mathrm{Earth}}$', color=color_mig, size=fsize-7, rotation=-46, va='center', ha='center', transform=ax1.transAxes)
 ax1.text(0.40, 0.37, r'$0.1 \, M_{\mathrm{Earth}}$', color=color_mig, size=fsize-7, rotation=-38, va='center', ha='center', transform=ax1.transAxes)
 
 color_dot = qgray_dark
