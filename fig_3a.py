@@ -307,7 +307,7 @@ rad_resII   = np.ma.masked_where((tform <= 0.7), rad)
 ax1.scatter(rad_resII, tform_resII, marker='o', facecolors=blues[3], edgecolors='black', s=25, zorder=1, lw=0.5, alpha=0.8)
 
 
-ax1.text(-0.12, +1.21, 'A', color="k", rotation=0, ha="left", va="top", fontsize=fsize+10, transform=ax1.transAxes, bbox=dict(fc='white', ec="white", alpha=0.01, pad=0.1, boxstyle='round'))
+ax1.text(-0.13, +1.22, 'A', color="k", rotation=0, ha="left", va="top", fontsize=fsize+10, transform=ax1.transAxes, bbox=dict(fc='white', ec="white", alpha=0.01, pad=0.1, boxstyle='round'))
 
 ### Additional fields as contours
 
@@ -372,7 +372,7 @@ ax1.tick_params(axis='x', which='both', right='off', top='off', labelsize=fsize+
 ax1.tick_params(axis='y', which='both', right='off', top='off', labelsize=fsize+7, width=tw, color="white", pad=1.)
 
 ax1.set_xlabel(r"Planetesimal radius, $R_{\mathrm{P}}$ (km)", fontsize=fsize+8)
-ax1.set_ylabel(r"Formation time after CAIs, $t_{\mathrm{form}}$ (Myr)", fontsize=fsize+8)
+ax1.set_ylabel(r"Formation time after CAI formation (Myr)", fontsize=fsize+8)
 ax1.xaxis.set_label_coords(0.5, -0.1)
 
 plt.gca().axes.get_yaxis().set_visible(False)

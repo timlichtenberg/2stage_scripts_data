@@ -110,6 +110,11 @@ for a in [ 2, 15 ]: # au
     ax1.plot(rolling_time, rolling_pebble_flux, ls=ls_pebble, c=color, lw=lw)
     ax1.plot(rolling_time, rolling_pebble_flux_outward, ls=":", c=color_dark, lw=lw)
 
+    if a == 2:
+        rolling_pebble_flux_2   = rolling_pebble_flux
+    if a == 15:
+        rolling_pebble_flux_15  = rolling_pebble_flux
+
     ## PLOT PEBBLE ACCRETION
 
     time = q.time / year # define time in years for convenience
@@ -197,16 +202,20 @@ N = 1000 # number of vspan blocks
 ax2.text(0.25e+6, 4.8, r'$\approx$ disk lifetime', color=qgray_dark, rotation=0, ha="left", va="center", fontsize=fsize-4)
 ax2.axhspan(4, 6, color=qgray_light, alpha=.3, lw=0)
 
-ax1.text(0.73, 0.80, r'Reservoir separation', color="k", rotation=0, ha="center", va="top", fontsize=fsize-2, transform=ax1.transAxes)
-start_point = 5.91
-end_point   = 6.78
-xspan       = np.logspace(start_point, end_point, N)
-for i in range(0, N-1):
-    alpha_min   = 0.05
-    alpha_max   = 0.99
-    alpha_scale = float(i)/float(N)
-    alpha       = alpha_min + (alpha_max-alpha_min)*alpha_scale
-    ax1.axvspan(xspan[i], xspan[i+1], color=qgray_light, alpha=alpha, lw=-0.0)
+ax1.text(0.71, 0.650, 'Reservoir\n                   separation', color="k", rotation=0, ha="center", va="top", fontsize=fsize, transform=ax1.transAxes)
+
+# # Shading ax1
+# start_point = 5.91
+# end_point   = 6.78
+# xspan       = np.logspace(start_point, end_point, N)
+# for i in range(0, N-1):
+#     alpha_min   = 0.05
+#     alpha_max   = 0.99
+#     alpha_scale = float(i)/float(N)
+#     alpha       = alpha_min + (alpha_max-alpha_min)*alpha_scale
+#     ax1.axvspan(xspan[i], xspan[i+1], color=qgray_light, alpha=alpha, lw=-0.0)
+
+# ax1.fill_between(rolling_time, rolling_pebble_flux_2, rolling_pebble_flux_15, color=qgray_light)
 
 ax2.text(0.4e+6, 0.4, 'Collision-dominated growth', color=qred, rotation=0, ha="center", va="bottom", fontsize=fsize-4)
 ax2.text(1.21e+6, 0.4, 'Pebble-aided growth', color=qred_dark, rotation=0, ha="center", va="bottom", fontsize=fsize-4)
@@ -217,8 +226,7 @@ xspan              = np.logspace(5.71, 6.5, N)
 for i in range(0, N-1):
     alpha_max   = 0.99
     alpha       = alpha_distribution[i]*alpha_max
-    ax2.axvspan(xspan[i], xspan[i+1], color=qred_light, alpha=alpha, lw=-0.0, ymax=0.375)
-
+    ax2.axvspan(xspan[i], xspan[i+1], color=qred_light, alpha=alpha, lw=-0.0, ymax=0.3235)
 
 ax1.text(0.985, 0.97, 'A', color="k", rotation=0, ha="right", va="top", fontsize=fsize+4, transform=ax1.transAxes)
 ax2.text(0.985, 0.97, 'B', color="k", rotation=0, ha="right", va="top", fontsize=fsize+4, transform=ax2.transAxes)
@@ -236,7 +244,10 @@ ax2.plot([0], [0], ls="--", c=qblue, lw=lw, label="15 au, planetesimals")
 
 ## ARROWS
 lwa=1.5
-ax1.annotate('', xy=(0.85, 0.08), xycoords='axes fraction', xytext=(0.85, 0.44), textcoords='axes fraction', arrowprops={'arrowstyle': '<|-|>,head_length=0.2,head_width=0.1', 'facecolor': 'k', 'edgecolor': 'k', 'lw': lwa}, va='center', transform=ax1.transAxes)
+ax1.annotate('', xy=(0.6, 0.48), xycoords='axes fraction', xytext=(0.6, 0.56), textcoords='axes fraction', arrowprops={'arrowstyle': 'simple,head_length=0.3,head_width=0.3,tail_width=0.07', 'facecolor': 'k', 'edgecolor': 'k', 'lw': lwa}, va='center', transform=ax1.transAxes)
+ax1.annotate('', xy=(0.6, 0.595), xycoords='axes fraction', xytext=(0.6, 0.52), textcoords='axes fraction', arrowprops={'arrowstyle': 'simple,head_length=0.3,head_width=0.3,tail_width=0.07', 'facecolor': 'k', 'edgecolor': 'k', 'lw': lwa}, va='center', transform=ax1.transAxes)
+ax1.annotate('', xy=(0.85, 0.08), xycoords='axes fraction', xytext=(0.85, 0.40), textcoords='axes fraction', arrowprops={'arrowstyle': 'simple,head_length=0.3,head_width=0.3,tail_width=0.07', 'facecolor': 'k', 'edgecolor': 'k', 'lw': lwa}, va='center', transform=ax1.transAxes)
+ax1.annotate('', xy=(0.85, 0.44), xycoords='axes fraction', xytext=(0.85, 0.20), textcoords='axes fraction', arrowprops={'arrowstyle': 'simple,head_length=0.3,head_width=0.3,tail_width=0.07', 'facecolor': 'k', 'edgecolor': 'k', 'lw': lwa}, va='center', transform=ax1.transAxes)
 # ax1.text(0.80, 0.33, r'$\frac{\mathrm{d} M_{\mathrm{Res} \, \mathrm{II}}}{\mathrm{d}t}$', color="black", rotation=0, ha="center", va="top", fontsize=fsize+2, transform=ax1.transAxes)
 
 ax1.text(0.015, 0.97, 'Disk build-up', color=qgray_dark, size=fsize, rotation=0, va='center', ha='left', fontsize=fsize-5, transform=ax1.transAxes)

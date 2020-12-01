@@ -86,7 +86,7 @@ resII_hydrous_frac   = np.convolve(df_resII.hydrous_frac, np.ones((N,))/N, mode=
 ###### ANNOTATIONS
 
 ax3.text(0.01, 0.85, 'A', color="k", rotation=0, ha="left", va="center", fontsize=fsize+3, transform=ax3.transAxes)
-ax3.text(0.05, 0.85, 'Metal-silicate segregation in meteorites', color=qgray_dark, rotation=0, ha="left", va="center", fontsize=fsize-6, transform=ax3.transAxes)
+ax3.text(0.05, 0.85, 'Metal-silicate segregation times in meteorites', color=qgray_dark, rotation=0, ha="left", va="center", fontsize=fsize-6, transform=ax3.transAxes)
 ax1.text(0.01, 0.96, 'B', color="k", rotation=0, ha="left", va="center", fontsize=fsize+3, transform=ax1.transAxes)
 ax1.text(0.05, 0.96, 'Simulation', color=qgray_dark, rotation=0, ha="left", va="center", fontsize=fsize-6, transform=ax1.transAxes)
 
@@ -97,7 +97,7 @@ ax1.annotate('Res II\npercolation', xy=(5.8, 0.18), va="center", ha="right", fon
 ax1.annotate('Res II\nrain-out', xy=(5.8, 0.012), va="center", ha="right", fontsize=fsize-2, color=qblue_dark)
 
 ax1.plot([0], [0], ls="--", c="black", lw=lw, label="Total, "+r"$f_\mathrm{diff}$")
-ax1.plot([0], [0], ls="-", c="black", lw=lw, label="Change, "+r"$\mathrm{d}f_\mathrm{diff}/\mathrm{d}t$")
+ax1.plot([0], [0], ls="-", c="black", lw=lw, label="Rate, "+r"$\mathrm{d}f_\mathrm{diff}/\mathrm{d}t$")
 diff_legend = ax1.legend(fontsize=fsize-4, loc=[0.02, 0.22], title="Differentiated material")
 plt.setp(diff_legend.get_title(), fontsize=fsize-4)
 
@@ -241,7 +241,7 @@ ax3.spines['left'].set_color('white')
 ax3.spines['right'].set_color('white')
 ax3.set_facecolor("#f7f7f7")
 
-ax1.set_xlabel(r"Time after CAIs, $\Delta t_\mathrm{CAI}$ (Myr)", fontsize=fsize+2)
+ax1.set_xlabel(r"Time after CAI formation, $\Delta t_\mathrm{CAI}$ (Myr)", fontsize=fsize+2)
 ax1.set_ylabel(r"Fraction of final planetesimal population (vol%)", fontsize=fsize+2)
 
 sns.despine(ax=ax1, bottom=False, top=True, left=False, right=True)

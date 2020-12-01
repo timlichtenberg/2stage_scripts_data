@@ -107,7 +107,7 @@ ax2.annotate(r'Reservoir I', xy=(0.15, 0.45), va="center", ha="center", fontsize
 ax2.annotate(r'Reservoir II', xy=(0.75, 0.45), va="center", ha="center", fontsize=fsize-2, color=qblue, xycoords="axes fraction") #, xycoords="axes fraction", transform=ax2.transAxes
 
 ax4.text(0.01, 0.85, 'A', color="k", rotation=0, ha="left", va="center", fontsize=fsize+3, transform=ax4.transAxes)
-ax4.text(0.05, 0.85, 'Aqueous alteration in meteorites', color=qgray_dark, rotation=0, ha="left", va="center", fontsize=fsize-6, transform=ax4.transAxes)
+ax4.text(0.05, 0.85, 'Aqueous alteration times in meteorites', color=qgray_dark, rotation=0, ha="left", va="center", fontsize=fsize-6, transform=ax4.transAxes)
 ax2.text(0.01, 0.96, 'B', color="k", rotation=0, ha="left", va="center", fontsize=fsize+3, transform=ax2.transAxes)
 ax2.text(0.05, 0.96, 'Simulation', color=qgray_dark, rotation=0, ha="left", va="center", fontsize=fsize-6, transform=ax2.transAxes, bbox=dict(fc='white', ec="white", alpha=0.8, pad=0.1, boxstyle='round'))
 
@@ -228,7 +228,7 @@ ax2.set_ylim([0.0, 1])
 
 sns.despine(ax=ax2, bottom=False, top=True, left=False, right=True)
 
-ax2.set_xlabel(r"Time after CAIs, $\Delta t_\mathrm{CAI}$ (Myr)", fontsize=fsize+2)
+ax2.set_xlabel(r"Time after CAI formation, $\Delta t_\mathrm{CAI}$ (Myr)", fontsize=fsize+2)
 
 ax2.set_ylabel(r"Fraction of final planetesimal population (vol%)", fontsize=fsize+2)
 
