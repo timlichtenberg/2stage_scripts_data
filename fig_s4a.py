@@ -334,7 +334,7 @@ ax1.tick_params(axis='x', which='both', right='off', top='off', labelsize=fsize+
 ax1.tick_params(axis='y', which='both', right='off', top='off', labelsize=fsize+7, width=tw, color="white", pad=1.)
 
 ax1.set_xlabel(r"Planetesimal radius, $R_{\mathrm{P}}$ (km)", fontsize=fsize+5)
-ax1.set_ylabel(r"Formation time after CAIs, $t_{\mathrm{form}}$ (Myr)", fontsize=fsize+5)
+ax1.set_ylabel(r"Formation time after CAI formation (Myr)", fontsize=fsize+5)
 ax1.xaxis.set_label_coords(0.5, -0.1)
 
 plt.gca().axes.get_yaxis().set_visible(False)

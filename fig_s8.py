@@ -38,13 +38,15 @@ ax1.set_xticks( [0.1, 0.2, 0.3, 0.5, 0.7, 1, 2, 3, 5] )
 ax1.set_xticklabels( ["0.1", "0.2", "0.3", "0.5", "0.7", "1", "2", "3", "5"], fontsize=fsize-2)
 
 ax1.set_ylim(top=1700, bottom=150)
-yticks = [ 150, 273, 573, 673, 1223, 1273, 1639 ]
-yticklabels = [ "150", "273", "573", "673", "\n1223", "1273\n", "1639" ]
+# yticks = [ 150, 273, 573, 673, 1223, 1273, 1639 ]
+# yticklabels = [ "150", "273", "573", "673", "\n1223", "1273\n", "1639" ]
+yticks = [ 200, 300, 500, 700, 1000, 1700 ]
+yticklabels = [ "200", "300", "700", "1000", "1700" ]
 ax1.set_yticks(yticks )
 ax1.set_yticklabels( yticklabels , fontsize=fsize-2)
 
-ax1.set_xlabel(r"Time after CAIs, $\Delta t_\mathrm{CAI}$ (Myr)", fontsize=fsize+3)
-ax1.set_ylabel(r"Planetesimal swarm temperature, $<T_{\mathrm{plts}}>$ (K)", fontsize=fsize+2)
+ax1.set_xlabel(r"Time after CAI formation, $\Delta t_\mathrm{CAI}$ (Myr)", fontsize=fsize+3)
+ax1.set_ylabel(r"Planetesimal population temperature, $<T_{\mathrm{plts}}>$ (K)", fontsize=fsize+2)
 
 t_sol   = 1416.193
 t_liq   = 1973.000
@@ -53,23 +55,24 @@ t_cocl  = 0.10*(t_liq-t_sol)+t_sol
 
 xloc = 0.103
 ax1.axhline(273.15, color=qgreen_dark, ls='--', lw=1)
-ax1.text(xloc, 273+3, r'Water ice melting, $T_\mathrm{hydr}$', color=qgreen_dark, size=fsize-4, va="bottom", ha="left")
+ax1.text(xloc, 273+3, 'Water ice melting', color=qgreen_dark, size=fsize-4, va="bottom", ha="left")
+ax1.text(xloc, 273-4, r'$T_\mathrm{hydr}$ = 273 K', color=qgreen_dark, size=fsize-4, va="top", ha="left")
 
 ax1.axhline(1223.15, color=qgreen_dark, ls='--', lw=1)
-ax1.text(xloc, 1223.15-20, r'Amphibolite decomposition, $T_\mathrm{decomp}$', color=qgreen_dark, size=fsize-4, va="top", ha="left")
+ax1.text(xloc, 1223.15-20, r'Amphibolite decomposition, $T_\mathrm{decomp} =$1223 K', color=qgreen_dark, size=fsize-4, va="top", ha="left")
 
 ax1.axhline(1273.15, color=qgreen_dark, ls='--', lw=1)
-ax1.text(xloc, 1273.15+10, r'Percolative core formation, $T_\mathrm{perc}$', color=qgreen_dark, size=fsize-4, va="bottom", ha="left")
+ax1.text(xloc, 1273.15+10, r'Percolative core formation, $T_\mathrm{perc} =$1273 K', color=qgreen_dark, size=fsize-4, va="bottom", ha="left")
 
 ax1.axhline(t_mo, color=qgreen_dark, ls='--', lw=1)
-ax1.text(xloc,t_mo-20, r"Metal rain-out, $T(\varphi_\mathrm{rain})$", color=qgreen_dark, size=fsize-4, va="top", ha="left")
+ax1.text(xloc,t_mo-20, r"Metal rain-out, $T(\varphi_\mathrm{rain}) \approx$1639 K", color=qgreen_dark, size=fsize-4, va="top", ha="left")
 
 ax1.axhline(573, color=qgray_light, ls=':', lw=1)
 ax1.text(xloc,573+50, r'Serpentine breakdown', color=qgray_light, size=fsize-6, va="center", ha="left")
 ax1.axhline(673, color=qgray_light, ls=':', lw=1)
 
-ax1.text(0.32, 400, 'Reservoir I', color=qred, size=fsize-2, va="bottom", ha="right")
-ax1.text(2.3, 400, 'Reservoir II', color=qblue, size=fsize-2, va="bottom", ha="right")
+ax1.text(0.32, 400, 'Reservoir I', color=qred, size=fsize, va="bottom", ha="right")
+ax1.text(2.3, 400, 'Reservoir II', color=qblue, size=fsize, va="bottom", ha="right")
 
 ax1.text(0.44, 870, r'$T_{\mathrm{max}}$', color=qred, size=fsize-2, va="center", ha="center")
 ax1.text(0.65, 870, r'$T_{\mathrm{mean}}$', color=qred, size=fsize-2, va="center", ha="center")

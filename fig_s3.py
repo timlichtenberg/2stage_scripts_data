@@ -84,8 +84,8 @@ sns.despine(ax=ax1, bottom=False, top=True, left=False, right=True)
 
 sns.set_style("ticks", {"ax" : ax0, "xtick.major.size":0, "ytick.major.size":0, "xtick.minor.size":0, "ytick.minor.size":0})
 
-xlab_A = 0.02
-ylab_A = 0.1
+xlab_A = 0.01
+ylab_A = 0.87
 ax0.text(xlab_A, ylab_A, 'A', color="k", rotation=0, ha="left", va="center", fontsize=fsize_label, transform=ax0.transAxes, bbox=dict(fc='white', ec="white", alpha=0.5, pad=0.05, boxstyle='round'))
 ax1.text(xlab_A, ylab_A, 'B', color="k", rotation=0, ha="left", va="center", fontsize=fsize_label, transform=ax1.transAxes, bbox=dict(fc='white', ec="white", alpha=0.5, pad=0.05, boxstyle='round'))
 ax2.text(xlab_A, ylab_A, 'C', color="k", rotation=0, ha="left", va="center", fontsize=fsize_label, transform=ax2.transAxes, bbox=dict(fc='white', ec="white", alpha=0.5, pad=0.05, boxstyle='round'))

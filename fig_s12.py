@@ -5,7 +5,7 @@ from jd_plot import *
 # Plot settings
 lw      = 2.5
 fscale  = 2.0
-fsize   = 22
+fsize   = 23
 sns.set_style("whitegrid")
 sns.set(style="ticks", font_scale=fscale)
 
@@ -95,7 +95,7 @@ ax1.text(0.335, 0.25, 'Mars', color=qmagenta, rotation=0, ha="left", va="center"
 
 ax1.annotate("", xy=(2.0, 3.62), xycoords='data', xytext=(1.7, 3.05), textcoords='data', arrowprops=dict(arrowstyle="-|>,head_length=0.3, head_width=0.15", ls="--", lw=lwa, connectionstyle="arc3", fc="white", ec=qturq), transform=ax1.transAxes, annotation_clip=False)
 
-ax1.text(0.93, 0.73, 'CAIs', color=qturq, rotation=0, ha="left", va="center", fontsize=fs_small, transform=ax1.transAxes)
+ax1.text(0.93, 0.73, 'CAIs', color=qturq, rotation=0, ha="left", va="center", fontsize=fs_small+2, transform=ax1.transAxes)
 
 ax1.axhline(0, color=qgray_light, zorder=zorder-5, alpha=0.5)
 ax1.axvline(0, color=qgray_light, zorder=zorder-5, alpha=0.5)
@@ -149,7 +149,7 @@ ax2.text(0.015, 0.105, 'Earth', color=qmagenta, rotation=0, ha="left", va="cente
 
 # S deficit
 ax2.annotate("", xy=(0.6, 0.8), xycoords='axes fraction', xytext=(0.48, 0.68), textcoords='axes fraction', arrowprops=dict(arrowstyle="-|>,head_length=0.3, head_width=0.15", ls="-", lw=lwa, connectionstyle="arc3", fc=qgray, ec=qgray), transform=ax2.transAxes, annotation_clip=False)
-ax2.text(0.54, 0.76, '$s$ deficit', color=qgray, rotation=0, ha="right", va="center", fontsize=fs_small, transform=ax2.transAxes)
+ax2.text(0.54, 0.76, '$s$ deficit', color=qgray, rotation=0, ha="right", va="center", fontsize=fs_small+2, transform=ax2.transAxes)
 
 # FURTHER ANNOTATIONS
 
@@ -159,8 +159,8 @@ ax2.axvline(0, color=qgray_light, zorder=zorder-5, alpha=0.5)
 ax1.text(0.02, 0.98, 'A', color="k", rotation=0, ha="left", va="top", zorder=100, fontsize=fsize+3, transform=ax1.transAxes)
 ax2.text(0.02, 0.98, 'B', color="k", rotation=0, ha="left", va="top", zorder=100, fontsize=fsize+3, transform=ax2.transAxes)
 
-ax1.text(0.09, 0.952, 'Variations in neutron-rich supernovae-derived isotopes', color=qgray_dark, rotation=0, ha="left", va="center", fontsize=fsize-7, transform=ax1.transAxes)
-ax2.text(0.09, 0.952, 'Variations in $s$-process isotopes', color=qgray_dark, rotation=0, ha="left", va="center", fontsize=fsize-7, transform=ax2.transAxes)
+ax1.text(0.09, 0.952, 'Variations in neutron-rich supernovae-derived isotopes', color="k", rotation=0, ha="left", va="center", fontsize=fsize-7, transform=ax1.transAxes)
+ax2.text(0.09, 0.952, 'Variations in $s$-process isotopes', color="k", rotation=0, ha="left", va="center", fontsize=fsize-7, transform=ax2.transAxes)
 
 # Axes settings
 ax1.tick_params(axis="both", labelsize=fsize-4)

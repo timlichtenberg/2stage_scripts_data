@@ -7,7 +7,7 @@ q = readdata()
 # Plot settings
 lw      = 1.5
 fscale  = 2.0
-fsize   = 20
+fsize   = 22
 
 fig = plt.figure(tight_layout=True, constrained_layout=False, figsize=[13, 11])
 gs = fig.add_gridspec(nrows=5, ncols=2, wspace=0.05, hspace=0.7, left=0.055, right=0.98, top=0.99, bottom=0.08)
@@ -32,7 +32,7 @@ for col_idx, orbit in enumerate([ 2, 4, 7, 15 ]):
     Tdisk_max_all = np.max([Tdisk_max_all, np.max(q.tmid[:,orbit_idx]) ])
     Tdisk_min_all = np.min([Tdisk_min_all, np.min(q.tmid[:,orbit_idx]) ])
 
-legend_ax2 = ax2.legend(loc=1, fontsize=fsize-4, title=r"$r$ (au)")
+legend_ax2 = ax2.legend(loc=1, ncol=2, fontsize=fsize-4, title=r"Orbital distance, $r$ (au)")
 plt.setp(legend_ax2.get_title(), fontsize=fsize-4)
 
 ### Varying radius, max T
@@ -107,8 +107,8 @@ for i, file_time in enumerate(file_time_list):
 ax0.axvline(1223, color=qgreen, lw=lw, ls=":")
 ax1.axvline(1223, color=qgreen, lw=lw, ls=":")
 
-ax0.text(1220, 13.0, r'$T_\mathrm{decomp}$', color=qgreen, rotation=90, ha="right", va="center", fontsize=fsize-5, bbox=dict(fc='white', ec="white", alpha=0.01, pad=0.1, boxstyle='round'))
-ax1.text(1220, 13.0, r'$T_\mathrm{decomp}$', color=qgreen, rotation=90, ha="right", va="center", fontsize=fsize-5, bbox=dict(fc='white', ec="white", alpha=0.01, pad=0.1, boxstyle='round'))
+ax0.text(1220, 13.0, r'$T_\mathrm{decomp}$', color=qgreen, rotation=90, ha="right", va="center", fontsize=fsize-2, bbox=dict(fc='white', ec="white", alpha=0.01, pad=0.1, boxstyle='round'))
+ax1.text(1220, 13.0, r'$T_\mathrm{decomp}$', color=qgreen, rotation=90, ha="right", va="center", fontsize=fsize-2, bbox=dict(fc='white', ec="white", alpha=0.01, pad=0.1, boxstyle='round'))
 
 legend_ax0 = ax0.legend(loc=4, fontsize=fsize-4, title=r"$R_\mathrm{P}$ (km)")
 plt.setp(legend_ax0.get_title(), fontsize=fsize-4)
@@ -133,7 +133,7 @@ ax2.set_xlim(left=np.min(xticks_time), right=np.max(xticks_time))
 ax2.set_xticks( xticks_time )
 ax2.set_xticklabels( xticklabels_time )
 
-yticks_tmp = [ 40, 70, 100, 300, 500, 1000, int(Tdisk_max_all) ]
+yticks_tmp = [ 40, 70, 100, 200, 300, 500, 1000, int(Tdisk_max_all) ]
 yticklabels_tmp = [str(round(i)) for i in yticks_tmp]
 ax2.set_yticks( yticks_tmp )
 ax2.set_yticklabels( yticklabels_tmp )
@@ -162,12 +162,12 @@ ax2.set_ylabel(r"$T_\mathrm{disk}$ (K)", fontsize=fsize+2)
 yloc_center=0.06
 xloc_left=0.02
 xloc_left2=xloc_left+0.06
-ax2.text(xloc_left, yloc_center, 'A', color="k", rotation=0, ha="left", va="center", fontsize=fsize+8, transform=ax2.transAxes, bbox=dict(fc='white', ec="white", alpha=0.5, pad=0.02, boxstyle='round'), zorder=10)
+ax2.text(xloc_left, 0.93, 'A', color="k", rotation=0, ha="left", va="center", fontsize=fsize+8, transform=ax2.transAxes, bbox=dict(fc='white', ec="white", alpha=0.5, pad=0.02, boxstyle='round'), zorder=10)
 ax0.text(xloc_left, yloc_center, 'B', color="k", rotation=0, ha="left", va="center", fontsize=fsize+8, transform=ax0.transAxes, bbox=dict(fc='white', ec="white", alpha=0.5, pad=0.02, boxstyle='round'), zorder=10)
 ax1.text(xloc_left, yloc_center, 'C', color="k", rotation=0, ha="left", va="center", fontsize=fsize+8, transform=ax1.transAxes, bbox=dict(fc='white', ec="white", alpha=0.5, pad=0.02, boxstyle='round'), zorder=10)
-ax2.text(xloc_left2-0.03, yloc_center, 'Temperature in midplane', color=qgray_dark, rotation=0, ha="left", va="center", fontsize=fsize-2, transform=ax2.transAxes, bbox=dict(fc='white', ec="white", alpha=0.5, pad=0.1, boxstyle='round'), zorder=10)
-ax0.text(xloc_left2, yloc_center, 'Varying planetesimal radius\n'+r"$r$ = 2 au", color=qgray_dark, rotation=0, ha="left", va="center", fontsize=fsize-2, transform=ax0.transAxes, bbox=dict(fc='white', ec="white", alpha=0.5, pad=0.1, boxstyle='round'), zorder=10)
-ax1.text(xloc_left2, yloc_center, 'Change over time\n'+r'$R_\mathrm{P}$ = 100 km, $r$ = 2 au', color=qgray_dark, rotation=0, ha="left", va="center", fontsize=fsize-2, transform=ax1.transAxes, bbox=dict(fc='white', ec="white", alpha=0.5, pad=0.1, boxstyle='round'), zorder=10)
+ax2.text(xloc_left2-0.03, 0.93, 'Midplane temperature', color="k", rotation=0, ha="left", va="center", fontsize=fsize-2, transform=ax2.transAxes, bbox=dict(fc='white', ec="white", alpha=0.5, pad=0.1, boxstyle='round'), zorder=10)
+ax0.text(xloc_left2, yloc_center, 'Varying planetesimal radius\n'+r"$r$ = 2 au", color="k", rotation=0, ha="left", va="center", fontsize=fsize-2, transform=ax0.transAxes, bbox=dict(fc='white', ec="white", alpha=0.5, pad=0.1, boxstyle='round'), zorder=10)
+ax1.text(xloc_left2, yloc_center, 'Change over time\n'+r'$R_\mathrm{P}$ = 100 km, $r$ = 2 au', color="k", rotation=0, ha="left", va="center", fontsize=fsize-2, transform=ax1.transAxes, bbox=dict(fc='white', ec="white", alpha=0.5, pad=0.1, boxstyle='round'), zorder=10)
 
 ax0.tick_params(axis='both', which='major', labelsize=fsize-2)
 ax0.tick_params(axis='both', which='minor', labelsize=fsize-2)

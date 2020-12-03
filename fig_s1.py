@@ -20,7 +20,7 @@ def find_nearest(array, value):
 # Plot settings
 lw      = 2.0
 fscale  = 2.0
-fsize   = 15
+fsize   = 20
 fsize_label = fsize + 7
 
 plt.rcParams.update({'font.size': 18})
@@ -69,7 +69,7 @@ ax0.set_ylim([1e-8, 1])
 ax0.set_ylabel(r'Mass, $M$ ($M_{\odot}$)', fontsize=fsize)
 ax0.set_xlabel(r'Time, $t$ (Myr)', fontsize=fsize)
 
-time_legend = ax0.legend(loc=3, ncol=1, fontsize=fsize)
+# time_legend = ax0.legend(loc=3, ncol=1, fontsize=fsize)
 
 xticks = [1e-2, 3e-2, 1e-1, 3e-1, 1, 3, 5]
 xticklabels = [ str(round(float(i),2)) for i in xticks ]
@@ -81,10 +81,18 @@ ax0.axhline(Mea/np.max(q.mstar), color=qgray_light, ls=':', lw=1)
 ax0.axhline(Mma/np.max(q.mstar), color=qgray_light, ls=':', lw=1)
 ax0.axhline(Mmo/np.max(q.mstar), color=qgray_light, ls=':', lw=1)
 ax0.axhline(Mce/np.max(q.mstar), color=qgray_light, ls=':', lw=1)
-ax0.text(0.1, Mju/np.max(q.mstar), 'Jupiter', color=qgray_light, size=fsize-4, va="bottom")
-ax0.text(0.1, Mea/np.max(q.mstar), 'Earth', color=qgray_light, size=fsize-4, va="bottom")
-ax0.text(0.1, Mma/np.max(q.mstar), 'Mars', color=qgray_light, size=fsize-4, va="bottom")
-ax0.text(0.1, Mmo/np.max(q.mstar), 'Moon', color=qgray_light, size=fsize-4, va="bottom")
+ax0.text(0.04, Mju/np.max(q.mstar), 'Jupiter', color=qgray_light, size=fsize-4, ha="center", va="bottom")
+ax0.text(0.04, Mea/np.max(q.mstar), 'Earth', color=qgray_light, size=fsize-4, ha="center", va="bottom")
+ax0.text(0.04, Mma/np.max(q.mstar), 'Mars', color=qgray_light, size=fsize-4, ha="center", va="bottom")
+ax0.text(0.04, Mmo/np.max(q.mstar), 'Moon', color=qgray_light, size=fsize-4, ha="center", va="bottom")
+
+ax0.text(0.02, 0.1*np.max(q.mstar)/np.max(q.mstar), 'Proto-Sun', color=qyellow, size=fsize, va="bottom")
+ax0.text(4.0, 4e-2*np.max(q.mstar)/np.max(q.mstar), 'H/He gas', color=qgreen, size=fsize, ha="right", va="bottom")
+ax0.text(0.7, 3e-3*np.max(q.mstar)/np.max(q.mstar), r'H$_2$O gas', color=qblue, size=fsize, ha="right", va="center")
+ax0.text(2, 3e-3*np.max(q.mstar)/np.max(q.mstar), 'Dust', color=qred, size=fsize, ha="center", va="center")
+ax0.text(0.9, 8e-6*np.max(q.mstar)/np.max(q.mstar), 'Total\nplanetesimals', color=qmagenta, size=fsize, ha="left", va="bottom")
+ax0.text(0.8, 1.4e-6*np.max(q.mstar)/np.max(q.mstar), 'Reservoir I', color=qmagenta_light, size=fsize, ha="left", va="bottom")
+ax0.text(0.73, 1e-7*np.max(q.mstar)/np.max(q.mstar), 'Reservoir II', color=qmagenta_dark, size=fsize, ha="left", va="bottom")
 
 ax0.set_yticks([1e-8, 1e-7, 1e-6, 1e-5, 1e-4, 1e-3, 1e-2, 1e-1, 1e-0])
 

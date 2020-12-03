@@ -101,7 +101,7 @@ legend = ax1.legend(loc=[0.01, 0.2], title=r"Planetesimal radius $R_\mathrm{P}$,
 plt.setp(legend.get_title(), fontsize=fsize-2)
 
 plt.ylabel(r"Percolative core formation, $f_{\mathrm{perco}}$ (vol%)", fontsize=fsize+5)
-plt.xlabel(r"Time after CAIs, $\Delta t_\mathrm{CAI}$ (Myr)", fontsize=fsize+5)
+plt.xlabel(r"Time after CAI formation, $\Delta t_\mathrm{CAI}$ (Myr)", fontsize=fsize+5)
 
 figure_name="fig_s6b"+".pdf"
 plt.savefig(fig_dir+figure_name, bbox_inches='tight')

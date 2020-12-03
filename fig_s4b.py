@@ -103,7 +103,7 @@ legend = ax1.legend(loc=3, title=r"Planetesimal radius $R_\mathrm{P}$, formation
 plt.setp(legend.get_title(), fontsize=fsize-2)
 
 plt.ylabel(r"Retained hydrous phases, $f_{\mathrm{hydr}}$ (vol%)", fontsize=fsize+5)
-plt.xlabel(r"Time after CAIs, $\Delta t_\mathrm{CAI}$ (Myr)", fontsize=fsize+5)
+plt.xlabel(r"Time after CAI formation, $\Delta t_\mathrm{CAI}$ (Myr)", fontsize=fsize+5)
 
 figure_name="fig_s4b"+".pdf"
 plt.savefig(fig_dir+figure_name, bbox_inches='tight')

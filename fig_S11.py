@@ -208,8 +208,8 @@ ax2.text(1.05e+6, 8e-2, 'Pebble-aided growth', color=qred_dark, rotation=0, ha="
 
 ax1.text(0.985, 0.95, 'A', color="k", rotation=0, ha="right", va="center", fontsize=fsize+4, transform=ax1.transAxes, bbox=dict(fc='white', ec="white", alpha=0.5, pad=0.1, boxstyle='round'))
 ax2.text(0.015, 0.95, 'B', color="k", rotation=0, ha="left", va="center", fontsize=fsize+4, transform=ax2.transAxes, bbox=dict(fc='white', ec="white", alpha=0.5, pad=0.1, boxstyle='round'))
-ax1.text(0.95, 0.95, 'Planetesimal accretion', color=qgray_dark, rotation=0, ha="right", va="center", fontsize=fsize-2, transform=ax1.transAxes, bbox=dict(fc='white', ec="white", alpha=0.5, pad=0.1, boxstyle='round'), zorder=10)
-ax2.text(0.05, 0.95, 'Pebble accretion', color=qgray_dark, rotation=0, ha="left", va="center", fontsize=fsize-2, transform=ax2.transAxes, bbox=dict(fc='white', ec="white", alpha=0.5, pad=0.1, boxstyle='round'), zorder=10)
+ax1.text(0.95, 0.95, 'Planetesimal accretion', color="k", rotation=0, ha="right", va="center", fontsize=fsize-2, transform=ax1.transAxes, bbox=dict(fc='white', ec="white", alpha=0.5, pad=0.1, boxstyle='round'), zorder=10)
+ax2.text(0.05, 0.95, 'Pebble accretion', color="k", rotation=0, ha="left", va="center", fontsize=fsize-2, transform=ax2.transAxes, bbox=dict(fc='white', ec="white", alpha=0.5, pad=0.1, boxstyle='round'), zorder=10)
 
 sns.despine(ax=ax1, top=True, right=True, left=False, bottom=False)
 sns.despine(ax=ax2, top=True, right=True, left=False, bottom=False)
