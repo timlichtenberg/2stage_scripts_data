@@ -65,7 +65,7 @@ ax1.axhline(1273.15, color=qgreen_dark, ls='--', lw=1)
 ax1.text(xloc, 1273.15+10, r'Percolative core formation, $T_\mathrm{perc} =$1273 K', color=qgreen_dark, size=fsize-4, va="bottom", ha="left")
 
 ax1.axhline(t_mo, color=qgreen_dark, ls='--', lw=1)
-ax1.text(xloc,t_mo-20, r"Metal rain-out, $T(\varphi_\mathrm{rain}) \approx$1639 K", color=qgreen_dark, size=fsize-4, va="top", ha="left")
+ax1.text(xloc,t_mo-20, r"Metal rain-out, $T(\varphi_\mathrm{rain}) =$1639 K", color=qgreen_dark, size=fsize-4, va="top", ha="left")
 
 ax1.axhline(573, color=qgray_light, ls=':', lw=1)
 ax1.text(xloc,573+50, r'Serpentine breakdown', color=qgray_light, size=fsize-6, va="center", ha="left")
