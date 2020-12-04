@@ -40,8 +40,8 @@ ax1.set_xticklabels( ["0.1", "0.2", "0.3", "0.5", "0.7", "1", "2", "3", "5"], fo
 ax1.set_ylim(top=1700, bottom=150)
 # yticks = [ 150, 273, 573, 673, 1223, 1273, 1639 ]
 # yticklabels = [ "150", "273", "573", "673", "\n1223", "1273\n", "1639" ]
-yticks = [ 200, 300, 500, 700, 1000, 1700 ]
-yticklabels = [ "200", "300", "700", "1000", "1700" ]
+yticks = [ 200, 300, 400, 500, 700, 1000, 1300, 1700 ]
+yticklabels = [ "200", "300", "400", "500", "700", "1000", "1300", "1700" ]
 ax1.set_yticks(yticks )
 ax1.set_yticklabels( yticklabels , fontsize=fsize-2)
 
