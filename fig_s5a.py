@@ -140,6 +140,12 @@ melt2_frac          = np.asarray(melt2_frac)
 Tmax_grid           = np.asarray(Tmax_grid)
 Tmean_markers       = np.asarray(Tmean_markers)
 
+# Scipy interpolate function seems to have an issue with very small numbers
+# Limit minimum fraction for plotting purposes
+for idx, i in enumerate(primitive_frac):
+    if i < 1e-10:
+        primitive_frac[idx] = 1e-10
+
 xi = np.linspace(min(rad), max(rad), 100)
 yi = np.linspace(min(tform), max(tform), 100)
 
@@ -159,8 +165,6 @@ zi_melt1_frac = scipy.interpolate.griddata(points, melt1_frac, (grid_x, grid_y),
 zi_melt2_frac = scipy.interpolate.griddata(points, melt2_frac, (grid_x, grid_y), method='linear', rescale=False)
 zi_Tmax_grid = scipy.interpolate.griddata(points, Tmax_grid, (grid_x, grid_y), method='linear', rescale=False)
 zi_Tmean_markers = scipy.interpolate.griddata(points, Tmean_markers, (grid_x, grid_y), method='linear', rescale=False)
-
-zi_list = [ "zi_Tmax_grid", "zi_perco_frac" ]
 
 label_font      = 22
 tick_font       = 20
