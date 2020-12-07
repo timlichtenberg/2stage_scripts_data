@@ -144,7 +144,7 @@ print("CC_iron_mean:", CC_iron_mean)
 print("NC_hydr_mean:", NC_hydr_mean)
 print("CC_hydr_mean:", CC_hydr_mean)
 
-# ### Annotate ages as error bars
+### Annotate ages as error bars
 lwa            = 1.5
 ages_y_base    = 0.1
 ages_y_base_cc = 0.1
@@ -153,66 +153,62 @@ cc_color_ages  = qblue
 
 # NC IRONS
 
-# IC: 0.3, -0.2 - 0.8
+# IC: 0.3 ± 0.5, -0.2 - 0.8
 ax3.annotate("", xy=(0.8, ages_y_base+0.0), xycoords='data', xytext=(0.1, ages_y_base+0.0), textcoords='data', arrowprops=dict(arrowstyle="|-|,widthA=0.0,widthB=0.0", lw=lwa, connectionstyle="arc3", fc=nc_color_ages, ec=nc_color_ages))
 ax3.plot(0.3, ages_y_base+0.00, color=nc_color_ages, marker='D', mec="white", zorder=20)
 ax3.annotate(r'IC', xy=(0.82, ages_y_base+0.00), va="center", ha="left", fontsize=fsize-8, color=nc_color_ages, transform=ax3.transAxes)
 
-# IIAB: 0.8, 0.3 - 1.3
+# IIAB: 0.8 ± 0.5, 0.3 - 1.3
 ax3.annotate("", xy=(1.3, ages_y_base+0.05), xycoords='data', xytext=(0.3, ages_y_base+0.05), textcoords='data', arrowprops=dict(arrowstyle="|-|,widthA=0.,widthB=0.", lw=lwa, connectionstyle="arc3", fc=nc_color_ages, ec=nc_color_ages))
 ax3.plot(0.8, ages_y_base+0.05, color=nc_color_ages, marker='D', mec="white", zorder=20)
 ax3.annotate(r'IIAB', xy=(1.35, ages_y_base+0.05), va="center", ha="left", fontsize=fsize-8, color=nc_color_ages, transform=ax3.transAxes)
 
-# IIIAB: 1.2, 0.7 - 1.7
+# IIIAB: 1.2 ± 0.5, 0.7 - 1.7
 ax3.annotate("", xy=(1.7, ages_y_base+0.10), xycoords='data', xytext=(0.7, ages_y_base+0.10), textcoords='data', arrowprops=dict(arrowstyle="|-|,widthA=0.,widthB=0.", lw=lwa, connectionstyle="arc3", fc=nc_color_ages, ec=nc_color_ages))
 ax3.plot(1.2, ages_y_base+0.10, color=nc_color_ages, marker='D', mec="white", zorder=20)
 ax3.annotate(r'IIIAB', xy=(1.77, ages_y_base+0.10), va="center", ha="left", fontsize=fsize-8, color=nc_color_ages, transform=ax3.transAxes)
 
-# IVA: 1.5, 0.9 - 2.1
+# IVA: 1.5 ± 0.6, 0.9 - 2.1
 ax3.annotate("", xy=(2.1, ages_y_base+0.15), xycoords='data', xytext=(0.9, ages_y_base+0.15), textcoords='data', arrowprops=dict(arrowstyle="|-|,widthA=0.,widthB=0.", lw=lwa, connectionstyle="arc3", fc=nc_color_ages, ec=nc_color_ages))
 ax3.plot(1.5, ages_y_base+0.15, color=nc_color_ages, marker='D', mec="white", zorder=20)
 ax3.annotate(r'IVA', xy=(2.2, ages_y_base+0.15), va="center", ha="left", fontsize=fsize-8, color=nc_color_ages, transform=ax3.transAxes)
 
-# IIIE: 1.8, 1.1 - 2.5
+# IIIE: 1.8 ± 0.7, 1.1 - 2.5
 ax3.annotate("", xy=(2.5, ages_y_base+0.20), xycoords='data', xytext=(1.1, ages_y_base+0.20), textcoords='data', arrowprops=dict(arrowstyle="|-|,widthA=0.,widthB=0.", lw=lwa, connectionstyle="arc3", fc=nc_color_ages, ec=nc_color_ages))
 ax3.plot(1.8, ages_y_base+0.20, color=nc_color_ages, marker='D', mec="white", zorder=20)
 ax3.annotate(r'IIIE', xy=(2.6, ages_y_base+0.20), va="center", ha="left", fontsize=fsize-8, color=nc_color_ages, transform=ax3.transAxes)
 
-# # IAB: 6.0, 5.2 - 6.8
+# # IAB: 6.0 ± 0.8, 5.2 - 6.8
 ax3.annotate("", xy=(6.0, ages_y_base+0.25), xycoords='data', xytext=(5.2, ages_y_base+0.25), textcoords='data', arrowprops=dict(arrowstyle="|-|,widthA=0.,widthB=0.", lw=lwa, connectionstyle="arc3", fc=nc_color_ages, ec=nc_color_ages))
 ax3.plot(6.0, ages_y_base+0.25, color=nc_color_ages, marker='D', mec="white", zorder=20)
 ax3.annotate(r'IAB', xy=(5.1, ages_y_base+0.25), va="center", ha="right", fontsize=fsize-8, color=nc_color_ages, transform=ax3.transAxes)
 
 # CC IRONS
 
-# IIIF: 2.2, 1.1 - 3.3
+# IIIF: 2.2 ± 1.1, 1.1 - 3.3
 ax3.annotate("", xy=(3.3, ages_y_base+0.30), xycoords='data', xytext=(1.1, ages_y_base+0.30), textcoords='data', arrowprops=dict(arrowstyle="|-|,widthA=0.,widthB=0.", lw=lwa, connectionstyle="arc3", fc=cc_color_ages, ec=cc_color_ages))
 ax3.plot(2.2, ages_y_base+0.30, color=cc_color_ages, marker='s', mec="white", zorder=20)
 ax3.annotate(r'IIIF', xy=(3.4, ages_y_base+0.30), va="center", ha="left", fontsize=fsize-8, color=cc_color_ages, transform=ax3.transAxes)
 
-# IID: 2.3, 1.7 - 2.9
+# IID: 2.3 ± 0.6, 1.7 - 2.9
 ax3.annotate("", xy=(2.9, ages_y_base+0.35), xycoords='data', xytext=(1.7, ages_y_base+0.35), textcoords='data', arrowprops=dict(arrowstyle="|-|,widthA=0.,widthB=0.", lw=lwa, connectionstyle="arc3", fc=cc_color_ages, ec=cc_color_ages))
 ax3.plot(2.3, ages_y_base+0.35, color=cc_color_ages, marker='s', mec="white", zorder=20)
 ax3.annotate(r'IID', xy=(3.0, ages_y_base+0.35), va="center", ha="left", fontsize=fsize-8, color=cc_color_ages, transform=ax3.transAxes)
 
-# IIF: 2.5, 1.8 - 3.2
+# IIF: 2.5 ± 0.7, 1.8 - 3.2
 ax3.annotate("", xy=(3.2, ages_y_base+0.40), xycoords='data', xytext=(1.8, ages_y_base+0.40), textcoords='data', arrowprops=dict(arrowstyle="|-|,widthA=0.,widthB=0.", lw=lwa, connectionstyle="arc3", fc=cc_color_ages, ec=cc_color_ages))
 ax3.plot(2.5, ages_y_base+0.40, color=cc_color_ages, marker='s', mec="white", zorder=20)
 ax3.annotate(r'IIF', xy=(3.3, ages_y_base+0.40), va="center", ha="left", fontsize=fsize-8, color=cc_color_ages, transform=ax3.transAxes)
 
-# IIC: 2.6, 1.3 - 3.9
+# IIC: 2.6 ± 1.3, 1.3 - 3.9
 ax3.annotate("", xy=(3.9, ages_y_base+0.45), xycoords='data', xytext=(1.3, ages_y_base+0.45), textcoords='data', arrowprops=dict(arrowstyle="|-|,widthA=0.,widthB=0.", lw=lwa, connectionstyle="arc3", fc=cc_color_ages, ec=cc_color_ages))
 ax3.plot(2.6, ages_y_base+0.45, color=cc_color_ages, marker='s', mec="white", zorder=20)
 ax3.annotate(r'IIC', xy=(4.0, ages_y_base+0.45), va="center", ha="left", fontsize=fsize-8, color=cc_color_ages, transform=ax3.transAxes)
 
-# IVB: 2.8, 2.1 - 3.5
+# IVB: 2.8 ± 0.7, 2.1 - 3.5
 ax3.annotate("", xy=(3.5, ages_y_base+0.50), xycoords='data', xytext=(2.1, ages_y_base+0.50), textcoords='data', arrowprops=dict(arrowstyle="|-|,widthA=0.,widthB=0.", lw=lwa, connectionstyle="arc3", fc=cc_color_ages, ec=cc_color_ages))
 ax3.plot(2.8, ages_y_base+0.50, color=cc_color_ages, marker='s', mec="white", zorder=20)
 ax3.annotate(r'IVB', xy=(3.6, ages_y_base+0.50), va="center", ha="left", fontsize=fsize-8, color=cc_color_ages, transform=ax3.transAxes)
-
-## HYDROTHERMAL ACTIVITY
-ages_y_base    = 0.2
-ages_y_base_cc = 0.1
 
 # Axes settings
 
