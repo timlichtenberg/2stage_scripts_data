@@ -104,45 +104,31 @@ plt.setp(diff_legend.get_title(), fontsize=fsize-4)
 ax3.annotate(r'Carbonaceous reservoir (CC)', xy=(1.0, 0.40), va="center", ha="right", fontsize=fsize-6, color=qblue, transform=ax3.transAxes)
 ax3.annotate(r'Non-carbonaceous reservoir (NC)', xy=(0.65, 0.25), va="center", ha="right", fontsize=fsize-6, color=qred, transform=ax3.transAxes)
 
-############# CORE FORMATION AGES AND HYDROTHERMAL ACTIVITY
+############# CORE FORMATION AGES
 
 ## Calc error propagated mean age
 import uncertainties
 from uncertainties import ufloat
 
-NC_irons = np.array([ufloat(0.3, 0.5), 
-                     ufloat(0.8, 0.5), 
-                     ufloat(1.2, 0.5), 
-                     ufloat(1.8, 0.7), 
-                     ufloat(1.5, 0.6)])#,
+NC_irons = np.array([ufloat(0.3, 0.5),  # IC
+                     ufloat(0.8, 0.5),  # IIAB
+                     ufloat(1.2, 0.5),  # IIIAB
+                     ufloat(1.5, 0.6),  # IVA
+                     ufloat(1.8, 0.7)]) # IIIE
                      # ufloat(6.0, 0.8)]) # IAB
 
-CC_irons = np.array([ufloat(2.6, 1.3), 
-                        ufloat(2.3, 1.2), 
-                        ufloat(2.3, 0.6), 
-                        ufloat(2.5, 0.7), 
-                        ufloat(2.2, 1.1), 
-                        ufloat(2.8, 0.7)])
-
-NC_hydr = np.array([ufloat(2.4, 1.8)])
-
-CC_hydr = np.array( [ufloat(4.2, 0.8), 
-                        ufloat(5.1, 0.5), 
-                        ufloat(4.8, 3.0), 
-                        ufloat(4.9, 0.7), 
-                        ufloat(4.8, 0.5), 
-                        ufloat(4.7, 1.3)])
+CC_irons = np.array([ufloat(2.2, 1.1),  # IIF
+                     ufloat(2.3, 0.6),  # IID
+                     ufloat(2.5, 0.7),  # IIF
+                     ufloat(2.6, 1.3),  # IIC
+                     ufloat(2.8, 0.7)]) # IVB
 
 # Calculate mean and associated error:
 NC_iron_mean = np.mean(NC_irons)
 CC_iron_mean = np.mean(CC_irons)
-NC_hydr_mean = np.mean(NC_hydr)
-CC_hydr_mean = np.mean(CC_hydr)
 
 print("NC_iron_mean:", NC_iron_mean)
 print("CC_iron_mean:", CC_iron_mean)
-print("NC_hydr_mean:", NC_hydr_mean)
-print("CC_hydr_mean:", CC_hydr_mean)
 
 ### Annotate ages as error bars
 lwa            = 1.5
