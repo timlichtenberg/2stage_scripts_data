@@ -160,7 +160,7 @@ ax4.annotate("", xy=(5.0+CAI_offset, ages_y_base_cc+y_offset), xycoords='data', 
 ax4.plot(4.2+CAI_offset, ages_y_base_cc+y_offset, color=cc_color_ages, marker='s', mec="white", zorder=20)
 ax4.annotate('CV', xy=(3.4, ages_y_base_cc+y_offset), va="center", ha="right", fontsize=fsize-8, color=cc_color_ages, transform=ax4.transAxes)
 
-# CR: 4.2 (-1.3/+1.8), 2.9 - 6.3
+# CR: 4.2 (-1.3/+1.8), 2.9 - 6.0
 y_offset = 0.20
 ax4.annotate("", xy=(6.0, ages_y_base_cc+y_offset), xycoords='data', xytext=(2.9+CAI_offset, ages_y_base_cc+y_offset), textcoords='data', arrowprops=dict(arrowstyle="|-|,widthA=0.0,widthB=0.0", lw=lwa, connectionstyle="arc3", fc=cc_color_ages, ec=cc_color_ages))
 ax4.plot(4.2+CAI_offset, ages_y_base_cc+y_offset, color=cc_color_ages, marker='s', mec="white", zorder=20)

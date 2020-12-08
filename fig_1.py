@@ -110,7 +110,7 @@ contour_levels  = [ 100, 150, 300 ][::-1]
 lw_mig = 1.0
 
 
-# ########## 'Lost' track Res II
+# ########## Add migration tracks originating in Res II
 # # Lost 10 Mearth embryo
 # migration_track   = np.loadtxt(dat_dir_migration+'1300000.0yr10.0Mearth17au.dat', delimiter=",")
 # planet_time_10Me  = [float(x) for x in migration_track[0]]
@@ -180,7 +180,7 @@ ax1.annotate("", xy=(x_arrows, 0.47), xycoords='axes fraction', xytext=(x_arrows
 ax1.text(x_text, 0.236, 'Class I', color=qgray_light, size=fsize, rotation=90, va='center', ha='left', fontsize=fsize-5, transform=ax1.transAxes)
 ax1.annotate("", xy=(x_arrows, 0.19), xycoords='axes fraction', xytext=(x_arrows, 0.001), textcoords='axes fraction', arrowprops=dict(arrowstyle="|-|,widthA=0.0,widthB=0.0", lw=lwa, connectionstyle="arc3", fc=qgray_light, ec=qgray_light), transform=ax1.transAxes)
 
-# ##### GAP OPENING CONTOURS
+# ##### GAP OPENING CONTOURS (cf. Fig. S9A)
 # CS              = ax1.contourf(x, y, Z, color_levels, extend='max', alpha=0.0, corner_mask=True)
 # contour_colors  = sns.color_palette("Purples_r", len(contour_levels))
 # CS2             = ax1.contour(CS, levels=contour_levels, colors=contour_colors, zorder=5)
