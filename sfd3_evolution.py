@@ -230,7 +230,7 @@ for res in reservoir_list:
 
             df_evolution_tmp   = pd.DataFrame( list(zip(res_list,imf_list,time_list,sol_frac_list, liq_frac_list, hydrous_frac_list, primitive_frac_list, n2co2_frac_list, cocl_frac_list, h2o_frac_list, perco_frac_list, melt1_frac_list, melt2_frac_list, Tmax_grid_list, Tmean_markers_list, mass_tot_time_list)), columns=evolution_labels)
             df_evolution    = df_evolution.append(df_evolution_tmp, sort=False, ignore_index=True, verify_integrity=True)
-            df_evolution.to_csv(dat_dir+"sfd_evolution2.csv", index=None)
+            df_evolution.to_csv(dat_dir+"sfd_evolution.csv", index=None)
 
         # If res and imf combination already exists in written data frame
         else:

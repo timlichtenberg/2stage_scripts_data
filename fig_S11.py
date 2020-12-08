@@ -2,8 +2,9 @@ from jd_natconst import *
 from jd_readdata import *
 from jd_plot import *
 
-### ! REQUIRES: Ormel & Liu (2018) python script "OL18.py"
-### https://staff.fnwi.uva.nl/c.w.ormel/software.html -> "epsilon.tar.gz"
+### ! REQUIRES: Ormel & Liu (2018) python script "OL18.py" in the main directory
+### Download "epsilon.tar.gz" from https://staff.fnwi.uva.nl/c.w.ormel/software.html
+### Unzip into main directory, then run this script
 import OL18
 
 q = readdata()
