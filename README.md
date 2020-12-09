@@ -8,6 +8,8 @@ For questions, help and notifications surrounding this repository please contact
 
 # References
 
+[![DOI](https://zenodo.org/badge/273526212.svg)](https://zenodo.org/badge/latestdoi/273526212)
+
 When you make use of material from this repository, please acknowledge:
 
 > Lichtenberg, T., Dra̧żkowska, J., Schönbächler, M., Golabek, G. J., Hands, T. O. (2021) Bifurcation of planetary building blocks during Solar System formation.
