@@ -5,7 +5,6 @@ from jd_natconst import *
 
 working_dir  = os.getcwd()
 dat_d18a_dir = working_dir+"/data/Drazkowska_Dullemond_2018/"
-# dat_d18a_dir = "/Users/tim/Dropbox/work/Projects/19_2stage/dat/drazkowska18a/"
 image_dir    = working_dir+"/figures/"
 fig_dir      = image_dir
 
@@ -375,35 +374,10 @@ class disk(object):
             self.dmpltstot_resV[itime]   = self.mplts_resV[itime]-self.mplts_resV[itime-1]
             self.dmpltstot_resVI[itime]  = self.mplts_resVI[itime]-self.mplts_resVI[itime-1]
 
-
-
-        # self.dplts  	= np.zeros((ntime,nr))
-        # self.dSigmadt   = np.zeros((ntime,nr))
-        # bla = np.zeros((nr))
-
-        # for itime in range(1,ntime):
-
-        #     for ir in range(nr):
-        #         self.dplts_resI[itime,ir] = (self.sigmaplts_resI[itime,ir] - self.sigmaplts_resI[itime-1,ir])
-        #         bla_resI[ir] = self.dplts_resI[itime,ir]/(self.time[itime]-self.time[itime-1])
-
-        #     for ir in range(1,nr):
-        #         self.dSigmadt_resI[itime,ir] =  bla_resI[ir]
-
-       	# self.dmdt_resI   = np.zeros((ntime,nr))
-        # bla_resI = np.zeros((nr))
-        # for itime in range(1,ntime):
-        #     for ir in range(nr):
-        #         self.dmplts_resI[itime,ir] = (self.sigmaplts_resI[itime,ir] - self.sigmaplts_resI[itime-1,ir])*math.pi*((self.r[ir] * self.r[ir]) - (self.r[ir-1] * self.r[ir-1])) # are -1 notation right, or should it be +1 first and no -1 then?
-        #         bla_resI[ir] = self.dmplts_resI[itime,ir]/(self.time[itime]-self.time[itime-1])
-        #     for ir in range(1,nr):
-        #         self.dmdt_resI[itime,ir] =  bla[ir]
-
         for itime in range(1,ntime):
 
             for ir in range(nr):
 
-                # are -1 notation right, or should it be +1 first and no -1 then?
                 self.dmplts_resI[itime,ir] = (self.sigmaplts_resI[itime,ir] - self.sigmaplts_resI[itime-1,ir])*math.pi*((self.r[ir] * self.r[ir]) - (self.r[ir-1] * self.r[ir-1]))
                 self.dmplts_resII[itime,ir] = (self.sigmaplts_resII[itime,ir] - self.sigmaplts_resII[itime-1,ir])*math.pi*((self.r[ir] * self.r[ir]) - (self.r[ir-1] * self.r[ir-1]))
                 self.dmplts_resIII[itime,ir] = (self.sigmaplts_resIII[itime,ir] - self.sigmaplts_resIII[itime-1,ir])*math.pi*((self.r[ir] * self.r[ir]) - (self.r[ir-1] * self.r[ir-1]))
@@ -432,7 +406,6 @@ class disk(object):
                 bla_resV[ir]    = self.dplts_resV[itime,ir]/(self.time[itime]-self.time[itime-1])
                 bla_resVI[ir]   = self.dplts_resVI[itime,ir]/(self.time[itime]-self.time[itime-1])
 
-
             for ir in range(1,nr):
 
                 self.dmdt_resI[itime,ir] 		=  blam_resI[ir]
@@ -448,49 +421,6 @@ class disk(object):
                 self.dSigmadt_resIV[itime,ir]   =  bla_resIV[ir]
                 self.dSigmadt_resV[itime,ir]    =  bla_resV[ir]
                 self.dSigmadt_resVI[itime,ir]   =  bla_resVI[ir]
-
-        ### Reservoir II: tform > 0.5 Myr, r > dju
-
-        # with open(dat_d18a_dir+'sigmaplts.dat','r') as f:
-        #     f.readline()
-        #     for itime in range(ntime):
-        #         f.readline()
-        #         for ir in range(nr): # and ( self.r[ir] < dju ):
-        #             entry = float(f.readline())
-        #             if ( self.time[itime]/(year*1e+6) > 0.5 ) and ( self.r[ir] > dju ):
-        #                 self.sigmaplts_resII[itime,ir] = entry - self.sigmaplts[71,ir]
-        #             else:
-        #                 self.sigmaplts_resII[itime,ir] = 0.
-
-        # bla = np.zeros((nr))
-        # for itime in range(1,ntime):
-        #     for ir in range(nr):
-        #         self.dmplts_resII[itime,ir] = (self.sigmaplts_resII[itime,ir] - self.sigmaplts_resII[itime-1,ir])*math.pi*((self.r[ir] * self.r[ir]) - (self.r[ir-1] * self.r[ir-1])) # are -1 notation right, or should it be +1 first and no -1 then?
-        #         bla[ir] = self.dmplts_resII[itime,ir]/(self.time[itime]-self.time[itime-1])
-        #     for ir in range(1,nr):
-        #         self.dmdt_resII[itime,ir] =  bla[ir]
-
-        # Reservoir III: tform > 0.5 Myr, r < dju (, tform < 4.0 Myr)
-
-        # with open(dat_d18a_dir+'sigmaplts.dat','r') as f:
-        #     f.readline()
-        #     for itime in range(ntime):
-        #         f.readline()
-        #         for ir in range(nr):
-        #             entry = float(f.readline())
-        #             if ( self.time[itime]/(year*1e+6) > 0.5 ) and ( self.r[ir] < dju ):
-        #                 self.sigmaplts_resIII[itime,ir] = entry - self.sigmaplts[71,ir]
-        #             else:
-        #                 self.sigmaplts_resIII[itime,ir] = 0.
-
-        # bla = np.zeros((nr))
-        # for itime in range(1,ntime):
-        #     for ir in range(nr):
-        #         self.dmplts_resIII[itime,ir] = (self.sigmaplts_resIII[itime,ir] - self.sigmaplts_resIII[itime-1,ir])*math.pi*((self.r[ir] * self.r[ir]) - (self.r[ir-1] * self.r[ir-1])) # are -1 notation right, or should it be +1 first and no -1 then?
-        #         bla[ir] = self.dmplts_resIII[itime,ir]/(self.time[itime]-self.time[itime-1])
-        #     for ir in range(1,nr):
-        #         self.dmdt_resIII[itime,ir] =  bla[ir]
-
 
 def readdata():
     """

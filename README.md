@@ -36,8 +36,6 @@ When you make use of material from this repository, please acknowledge:
     ├── sfd3_evolution.py               # Script to interpolate planetesimal evolution to SFD
     └── README.md                       # This README file
 
-"time","sol_frac","liq_frac","hydrous_frac","primitive_frac","n2co2_frac","cocl_frac","h2o_frac","phyllo1_frac","phyllo2_frac","phyllo3_frac","phyllo4_frac","perco_frac","melt1_frac","melt2_frac","maxtk","t_max_body","meantk","t_mean_body",”count_toohot"
-
 # Software requirements
 
 Python 3.x
@@ -48,7 +46,7 @@ MATLAB 2018 (or later)
 
 # Plots & figures
 
-To re-plot **Figures 1–6** (main text) and **S1–S12** (Supplementary Material), execute the appropriate Python script:
+To re-plot *Figures 1–6* (main text) and *S1–S12* (Supplementary Material), execute the appropriate Python script:
 
     .
     ├── fig_1.py     
@@ -69,16 +67,16 @@ To re-plot **Figures 1–6** (main text) and **S1–S12** (Supplementary Materia
     ├── fig_11.py     
     ├── fig_12.py                    
 
-All scripts apart from **fig_2.py** and **fig_s11.py** should be directly executable using Python. These two files rely on an external package. To execute them, do the following:
+All scripts apart from *fig_2.py* and *fig_s11.py* should be directly executable using Python. These two files rely on an external package. To execute them, do the following:
 
 - Download *epsilon.tar.gz* from Dr. Chris Ormel's website at: https://staff.fnwi.uva.nl/c.w.ormel/software.html
 - Unzip into the top-level repository folder (*OL18.py* is the required python package file).
 - Then execute the two scripts.
 - Please contact us if *epsilon.tar.gz* should not be available online anymore.
 
-# Instructions for specific parts of the simulations
+# Simulation code & data
 
-## Disk evolution & dust coagulation
+## Disk evolution & dust coagulation: data
 
 If you make use of any of this data please acknowledge:
 
@@ -110,7 +108,7 @@ The following plotting scripts illustrate how to use the data:
 Further details on the simulation code can be found at: https://github.com/astrojoanna/DD-diskevol.
 
 
-## Planetesimal evolution
+## Planetesimal evolution: data
 
 The respective files and data are in:
 
@@ -158,15 +156,15 @@ The SFD evolution calculations are performed in:
 
 Further details on the simulation code (for the single planetesimal simulations) can be found at: https://github.com/timlichtenberg/i2elvis_planet.
 
-## Planetary orbital migration
+## Planetary orbital migration: simulation code & data
 
-The data files for migration simulations are in:
+The data and simulation code files for migration are in:
 
     .
     ├── /data                           
     │   ├── /migration                  # Planet orbital migration data
 
-The following script illustrates how to use the data:
+The following scripts illustrate how to use the data:
 
     .
     ├── fig_1.py  
@@ -178,9 +176,9 @@ The script to generate the migration data is in:
     ├── migration_tracks.py             # Code to calculate planetary orbital migration
 
 
-## External heating effects on planetesimals
+## External planetesimal heating: simulation code & data
 
-The data files for migration simulations are in:
+The data files for external heating effects are in:
 
     .
     ├── /data                           
@@ -191,7 +189,7 @@ The following script illustrates how to use the data:
     .
     ├── fig_s10.py        
 
-The script to generate the migration data is in (this requires MATLAB):
+The script to calculate the external heating effects is in (this requires MATLAB):
 
     .
     ├── /data                           

@@ -1,3 +1,5 @@
+# Script from: https://github.com/timlichtenberg/2stage_scripts_data
+# Part of the combined repository: https://osf.io/e2kfv/
 from sfd_functions import *
 
 df = pd.read_csv(dat_dir+"plts_all_data.csv")

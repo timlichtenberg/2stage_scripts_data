@@ -1,3 +1,5 @@
+# Script from: https://github.com/timlichtenberg/2stage_scripts_data
+# Part of the combined repository: https://osf.io/e2kfv/
 import jd_readdata as readdata
 import numpy
 import scipy.stats as stats
@@ -312,7 +314,7 @@ def main():
     for t in [ 0.7e6 ]:
         for M in [ 0.15 ]:
             for a in [ 7.0 ]:
-                mig = migration(readdata.readdata(), t_init = t, a = a, m = M * 3e-6)#3.5e5)
+                mig = migration(readdata.readdata(), t_init = t, a = a, m = M * 3e-6)
                 mig.run(show_plot = False)
     # Other combinations:
     # for t in [5e5, 7.5e5, 8e5, 1e6, 1.3e6, 2e6, 3e6, 4e6]:
