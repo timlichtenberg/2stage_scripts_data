@@ -38,8 +38,8 @@ v               = np.linspace(-33, -26, no_colors, endpoint=True)
 v_legend        = np.linspace(-33, -26, 8, endpoint=True)
 
 # Mearth au-2 Myr-1 units
-v_nat           = [ (10**(i))*((au**2.)*(1e+6*year))/Mea for i in v_legend ]
-v_nat_mag       = [ math.floor(math.log(number, 10)) for number in v_nat ]
+v_nat           = [ (np.e**(i))*((au*au)*(1e+6*year))/Mea for i in v_legend ]
+v_nat_mag       = [ math.floor(np.log(number)) for number in v_nat ]
 v_nat_mag_str   = [ str(i) for i in v_nat_mag ]
 print("Natural units, order of magnitude:", v_nat_mag)
 
@@ -62,15 +62,16 @@ clb.ax.tick_params(labelsize=fsize-7, labelrotation=45)
 # Res II
 cbaxes2 = inset_axes(ax1, width="35%", height="2%", loc='lower right', bbox_to_anchor=(xloc_colorlegend, yloc_colorlegend+0.0205, 1, 1), bbox_transform=ax1.transAxes, borderpad=0.0)
 clb2 = plt.colorbar(cont_resII, cax=cbaxes2, ticks=v_legend, orientation="horizontal")
-clb2.ax.tick_params(labelsize=fsize-7, labelrotation=45, width=0, length=43)
+clb2.ax.tick_params(labelsize=fsize-7, labelrotation=45, width=0, length=0)
+clb2.ax.xaxis.set_tick_params(pad=+50)
 clb2.ax.set_xticklabels(v_nat_mag_str)
 # cbaxes2.xaxis.set_ticks_position('top')
 
 clb2.ax.text(+0.5, +2.5, 'Planetesimal formation rate, '+r'$\mathrm{d}\Sigma_{\rm{plts}}/\mathrm{d}t$', fontsize=fsize-4, rotation=0, va='center', ha="center") 
 
-clb.ax.text(-0.1, -2.0, r'log $\mathrm{g}\ \mathrm{cm}^{-2}\ \mathrm{s}^{-1}$', fontsize=fsize-7, rotation=0, va='center', ha="right") 
+clb.ax.text(-0.1, -2.0, r'ln $\mathrm{g}\ \mathrm{cm}^{-2}\ \mathrm{s}^{-1}$', fontsize=fsize-7, rotation=0, va='center', ha="right") 
 
-clb2.ax.text(-0.1, -5.0, r'log $\mathrm{M}_\mathrm{Earth}\ \mathrm{au}^{-2}\ \mathrm{Myr}^{-1}$', fontsize=fsize-7, rotation=0, va='center', ha="right") 
+clb2.ax.text(-0.1, -5.0, r'ln $\mathrm{M}_\mathrm{Earth}\ \mathrm{au}^{-2}\ \mathrm{Myr}^{-1}$', fontsize=fsize-7, rotation=0, va='center', ha="right") 
 
 ############ MIGRATION
 X           = [ float(x) for x in list(df_gapmap.columns.values)[1:]]
